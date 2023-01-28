@@ -1,0 +1,9 @@
+.imgLarge{
+    transition: 2s;
+    flex: 1 1 0;
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 0.5rem;
+    margin: 0 auto;
+}
+

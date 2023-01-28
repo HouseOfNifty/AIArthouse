@@ -1,0 +1,65 @@
+.bg-login{
+    background-color: rgb(245, 245, 245);
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    border-radius: 2rem;
+    padding: 1rem;
+    align-items: center;
+}
+
+.fg{
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 1rem;
+    border-radius: 2rem;
+    padding: 1rem;
+   
+    width: 60%;
+}
+
+input[type=password]{
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    padding: 1rem;
+    border: 1px;
+    border-color: rgb(231, 231, 231);
+    border-style: solid;
+    border-radius: 1rem;
+}
+
+input[type=text]{
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    padding: 1rem;
+    border: 1px;
+    border-color: rgb(231, 231, 231);
+    border-style: solid;
+    border-radius: 1rem;
+}
+
+
+.button{
+    transition-property: background-color;
+    transition-duration: 0.1s;
+    display: block;
+    margin: 0 auto;
+    
+    text-align: center;
+    padding: 1rem;
+    border: 1px;
+    background-color: white;
+    
+    border-color: rgb(231, 231, 231);
+    border-style: solid;
+    border-radius: 1rem;
+}
+
+.button:active{
+    background-color: aliceblue;
+}

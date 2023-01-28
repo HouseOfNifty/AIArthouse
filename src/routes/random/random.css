@@ -1,0 +1,36 @@
+
+
+.galleryOld{
+    transition: .5s;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem auto;
+    padding-right: 2rem auto;
+}
+
+.gallery{
+    --grid-column-count: 5;
+    --grid-item-min-width: 310px;
+    --grid-layout-gap: 40px;
+
+    --gap-count: calc(var(--grid-column-count) - 1);
+    --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+    --grid-item--max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
+
+    transition: .5s;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item-min-width), var(--grid-item--max-width)), 1fr));
+    gap: var(--grid-layout-gap);
+    align-items: center;
+    justify-items: center;
+    padding-top: 2rem;
+}
+
+
+
+

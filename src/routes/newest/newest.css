@@ -1,0 +1,19 @@
+
+.galleryOld{
+    transition: .5s;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem auto;
+    padding-right: 2rem auto;
+}
+
+
+
+
+
+
