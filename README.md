@@ -1,4 +1,4 @@
-# AI Arthouse Frontend
+# [AI Arthouse Frontend](https://www.aiart.house/)
 
 A front-end React app that generates AI images using Stable Diffusion, Firebase, Google Cloud, and AWS.
 
