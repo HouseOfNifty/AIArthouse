@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useRef } from "react";
-import "./card.css";
+import "./FPCard.css";
 import bingus from "../../images/bingus.jpg";
 import like from "../../images/like.png";
 import axios from "axios";
@@ -10,7 +10,7 @@ import { useOnScreen } from "../../useOnScreen";
 export default function FPCard(props){
 
     const body = useRef(null);
-    const visible = useOnScreen(body);
+    const visible = useOnScreen(body, 0.90);
     const [flipped, setFlipped] = useState(false);
     //const [showLike, setShowLike] = useState(false);
     const [liked, setLiked] = useState(false);
@@ -49,8 +49,8 @@ export default function FPCard(props){
         //<a href={"https://aiarthouse.web.app/user?id=" + props.data.owner}>{props.data.userName}</a>
         <div>
             
-            {!flipped ? <div className={visible ? "frontcard show" : "frontcard hidden"} onClick={handleClick} ref={body}>
-                <img className="imgSmall" alt="Art" loading="lazy" src={props.data.imgSrc ? "https://aiartbucket.s3.amazonaws.com/" + props.data.imgSrc : bingus}></img>
+            {!flipped ? <div className={visible ? "fpFrontcard show" : "fpFrontcard hidden"} onClick={handleClick} ref={body}>
+                <img className="fpImgSmall" alt="Art" src={props.data.imgSrc ? "https://aiartbucket.s3.amazonaws.com/" + props.data.imgSrc : bingus}></img>
                 <p className="title">{props.data.prompt}</p>
                 
             </div> :

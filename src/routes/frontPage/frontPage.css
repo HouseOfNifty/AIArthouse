@@ -35,7 +35,15 @@
     align-items: center;
     margin-top: auto;
     margin-bottom: auto;
-    height: 80vh;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+@media screen and (max-width: 600px) {
+    .fpTextBox{
+        font-size: 8px;
+    }
 }
 
 .fpCarousel{
@@ -44,11 +52,15 @@
     scroll-snap-type: x mandatory;
     display: flex;
     flex-direction: row;
-    gap: 2em;
+    gap: 1em;
     height: fit-content;
     align-items: center;
     margin-top: auto;
     margin-bottom: auto; 
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
 }
 
 .fpCarouselItem{

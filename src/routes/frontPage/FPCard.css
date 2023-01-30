@@ -18,13 +18,12 @@
     z-index: -100;
 }
 
-.frontCard{
+.fpFrontCard{
     transition: 1s;
     flex: 1 1 0;
     border: 1px;
     border-color: var(--card-border);
     border-style: solid;
-
     border-radius: 2rem;
     background-color: var(--card-background);
     padding: 2rem;
@@ -91,16 +90,21 @@
     opacity: 1;
 }
 
-.imgSmall{
+.fpImgSmall{
     transition: 2s;
     display: block;
-    height: 80%;
-    max-width: auto;
     border-radius: 2rem;
     margin: 0 auto;
-    object-fit: cover;
+    object-fit: contain;
     aspect-ratio: 1 / 1;
-    
+    max-width: 15vh;
+}
+
+@media screen and (max-width: 600px) {
+    .fpImgSmall{
+        max-width: 30vw;
+        border-radius: 1em;
+    }
 }
 
 .imgLarge{
@@ -158,44 +162,51 @@
     border: 2px solid var(--accent);
 }
 
-.frontcard.hidden{
+
+
+.fpFrontcard.show{
+    display: flex;
+    flex-direction: column;
     transition: 1s;
-    flex: 1 1 0;
     border: 1px;
     border-color: var(--card-border);
     border-style: solid;
-
     border-radius: 2rem;
     background-color: var(--card-background);
     padding: 2rem;
-    width: min-content;
-    height: 25vh;
-    text-align: center;
-    justify-items: center;
-    align-items: center;
-    z-index: -100;
-    opacity: 0;
-    
-    
-}
-
-.frontcard.show{
-    transition: 1s;
-    flex: 1 1 0;
-    border: 1px;
-    border-color: var(--card-border);
-    border-style: solid;
-
-    border-radius: 2rem;
-    background-color: var(--card-background);
-    padding: 2rem;
-    width: min-content;
-    height: 25vh;
     text-align: center;
     justify-items: center;
     align-items: center;
     z-index: -100;
     opacity: 1;
+    height: 100%;
+    
+}
+
+.fpFrontcard.hidden{
+
+    flex: 1 1 0;
+    border: 1px;
+    border-color: var(--card-border);
+    border-style: solid;
+    height: 100%;
+    border-radius: 2rem;
+    background-color: var(--card-background);
+    padding: 2rem;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+    z-index: -100;
+    opacity: 0;
 
 }
 
+
+@media screen and (max-width: 600px) {
+    .fpFrontcard.show{
+        padding: 0.8em;
+    }
+    .fpFrontcard.hidden{
+        padding: 0.8em;
+    }
+}

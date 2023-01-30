@@ -1,11 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
-import camo from "../../images/camoflauge.png";
 import './frontPage.css';
-import Section from "./section";
-import Card from "../card/card";
-import { useOnScreen } from "../../useOnScreen";
-
-
+import FPCard from "./FPCard";
 
 
 /* <div className="bg">
@@ -29,8 +24,6 @@ export default function FrontPage() {
 
     const boxOne = useRef(null);
     const boxTwo = useRef(null);
-    const boxOneVisible = useOnScreen(boxOne);
-    const boxTwoVisible = useOnScreen(boxTwo);
     const [imagesOne, setImagesOne] = useState([]);
     const [imagesTwo, setImagesTwo] = useState([]);
     const [boxImage, setBoxImage] = useState(0);
@@ -59,14 +52,11 @@ export default function FrontPage() {
         const newImageOne = document.getElementById("firstBox" + (boxImage % 30).toString());
         const newImageTwo = document.getElementById("secondBox" + (boxImage % 30).toString());
         if (newImageOne && newImageTwo) {
-            
-            if (boxOneVisible) {
-                newImageOne.scrollIntoView({ behavior: "smooth", block: "center"});
-            }
-            if (boxTwoVisible == true) {
-                console.log("NewImageTwo is " + boxTwoVisible +"but it still scrolls")
-                newImageTwo.scrollIntoView({ behavior: "smooth", block: "center" });
-            }
+
+
+            newImageOne.scrollIntoView({ behavior: "smooth", inline: "center"});
+            newImageTwo.scrollIntoView({ behavior: "smooth", inline: "center"});
+
         }
     }, [boxImage]);
 
@@ -81,7 +71,7 @@ export default function FrontPage() {
                         <ul>
                             <li>Create an account.</li>
                             <li>Click on the "Generate" link.</li>
-                            <li>Be patient, it may take a few minutes for the cloud GPU to warm up.</li>
+                            <li>Be patient, it takes about 40 seconds to start the batch due to some cost saving measures.</li>
                             <li>Click on the image card to expand.</li>
                             <li>Your images are saved in the "My Images" tab, search is coming soon.</li>
                             <li>Back up the good stuff, this all might be purged one day.</li>
@@ -91,30 +81,35 @@ export default function FrontPage() {
                     <div className="fpCarousel" id="boxOne" ref={boxOne}>
                         {imagesOne && imagesOne.map((i, index) => {
                             return (<div key={index} id={"firstBox" + (index % 30).toString()}>
-                                <Card data={i} />
+                                <FPCard data={i} />
                             </div>)
                         })}
-                        {imagesOne.length === 0 && <Card data={{}} />}
+                        {imagesOne.length === 0 && <FPCard data={{}} />}
 
                     </div>
 
                     <div className="fpCarousel" id="boxTwo" ref={boxTwo}>
                         {imagesTwo && imagesTwo.map((i, index) => {
                             return (<div key={index} id={"secondBox" + (index % 30).toString()}>
-                                <Card data={i} />
+                                <FPCard data={i} />
                             </div>)
                         })}
-                        {imagesOne.length === 0 && <Card data={{}} />}
+                        {imagesTwo.length === 0 && <FPCard data={{}} />}
 
                     </div>
 
                     <div className="fpTextBox">
                         <h2>About the author</h2>
-                        <img src={camo} className="profileImage" />
+                        <p1>Stuart Kerr</p1>
+                        <p1 href="stu.kerr@hotmail.com">stu.kerr@hotmail.com</p1>
                     </div>
+
+                    <div style={{ height: "100px" }}></div>
                 </div>
             </div>
         </div>
 
     )
 }
+
+//<img src={camo} className="profileImage" />

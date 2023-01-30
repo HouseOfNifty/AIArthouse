@@ -3,7 +3,7 @@ import './App.css';
 import logo from "./images/logo.png"
 
 
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { auth } from './firebase';
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useState } from 'react';
@@ -26,16 +26,26 @@ function App() {
     <div className="defaultBackground">
       <div className="App">
         <Link to='/'><img className='App-logo' src={logo} alt="Logo" /></Link>
-        <h1 className='headerTitle' >AI Arthouse</h1>
-        <nav className="topNavBar">
+        <div className="navStack">
 
-          <Link className='link' to="/random">Random</Link>
-          <Link className='link' to="/newest">Newest</Link>
-          {!currUser ? <Link className='link' to="/login">Generate</Link> : null}
-          {!currUser ? 
-          <div style={{ "display": "grid", "transform": "translate(0, 50%)" }}><Link className='link' to='/login'>Log In</Link><Link className='link' to='/signup'>Sign Up</Link></div> : 
-          <div className="link"><Link className='link' to="/generate">Generate</Link><Link className='link' to="/user">My Images</Link><Link to='/login' className="link" onClick={() => signOut(auth)}>Log out</Link></div>}
-        </nav>
+          <h1 className='headerTitle' >AI Arthouse</h1>
+          <nav className="topNavBar">
+
+            <Link className='link' to="/random">Random</Link>
+            <Link className='link' to="/newest">Newest</Link>
+            {!currUser ? <Link className='link' to="/login">Generate</Link> : null}
+            {!currUser ?
+              <>
+                <Link className='link' to='/login'>Log In</Link>
+                <Link className='link' to='/signup'>Sign Up</Link>
+              </> :
+              <>
+                <Link className='link' to="/generate">Generate</Link>
+                <Link className='link' to="/user">My Images</Link>
+                <Link to='/login' className="link" onClick={() => signOut(auth)}>Log out</Link>
+              </>}
+          </nav>
+        </div>
       </div>
       <Outlet />
     </div>

@@ -4,15 +4,20 @@
   --card-border: rgb(231, 231, 231);
 
   --light-background: #f7ecdc;
+  --light-background-blue: #f4f0ff;
   --dark-background: #1d1434;
-  --accent: #EB9A29;
-  --accent-light: #f7bf92;
-
+  --accent-orange: #EB9A29;
+  --accent: rgb(201, 164, 109);
+  --accent-light-orange: #f7bf92;
+  --accent-light: rgb(255, 224, 175);
   --old-background: rgb(245, 245, 245);
+
+  --gradient-background: radial-gradient( rgb(134, 87, 16) 0%, rgba(255,255,255,1) 100%);
+  --gradient-background-blue: radial-gradient( var(--dark-background) 0%, rgba(255,255,255,1) 100%);
 }
 
 body{
-  background-color: var(--dark-background);
+  background: var(--gradient-background);
   
 }
 
@@ -158,9 +163,15 @@ ul li::before{
 .topNavBar {
   display: flex;
   right: 0;
-  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+  flex-wrap: wrap;
+}
 
-  margin-left: auto;
+.navStack{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .link {
@@ -172,14 +183,19 @@ ul li::before{
   display: inline-block;
   align-self: flex-end;
   font-family:'Courier New', Courier, monospace;
-  margin-left: 20px;
+  font-size: 4vw;
+}
 
+@media screen and (min-width: 700px) {
+  .headerTitle{
+    font-size: 4em;
+  }
 }
 
 .defaultBackground{
   display: flex;
   flex-direction: column;
-  background-color: var(--dark-background);
+  background-color: var(--gradient-background);
   height: auto;
 }
 

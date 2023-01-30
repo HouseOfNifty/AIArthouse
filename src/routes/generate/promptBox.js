@@ -98,7 +98,7 @@ export default function PromptBox(props) {
                     <div className="questionMark" onMouseEnter={()=>{setShowQuestion(true)}}><p className="questionMarkText">?</p></div>
 
                 </div>
-                <div className={showQuestion ? "questionBox" : "questionBox hide"} onMouseEnter={()=>{setShowQuestion(true)}} onMouseLeave={()=>{setShowQuestion(false)}}><p className="questionMarkText">Just for show</p></div>
+                <div className={showQuestion ? "questionBox" : "questionBox hide"} onMouseLeave={()=>{setShowQuestion(false)}}><p className="questionMarkText">Just for show</p></div>
                 <button className='button' value='Generate' onClick={generateImage}>Generate</button>
             </div></div>
 

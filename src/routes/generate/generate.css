@@ -1,12 +1,12 @@
 .bg-generate{
-    background-color: var(--dark-background);
+    background-color: var(--light-background);
     display: flex;
     flex-direction: column;
     margin: auto;
     border-radius: 2rem;
     padding: 1rem;
     align-items: center;
-    height: 100vh;
+
     margin-bottom: auto;
     max-width: 80vw;
 
@@ -50,6 +50,7 @@
     margin: 1em;
     transition: all .5s;
     max-height: 100%;
+    box-shadow: 0 0 1em 0.1em var(--accent);
 }
 
 .fg-generate-hidden{
@@ -294,8 +295,10 @@ select{
     transform: translateX(147%) translateY(-2%);
     transition: all 1s;
     box-shadow: 0 0 1em 0.1em var(--accent);
+    z-index: 1;
   }
 
   .questionBox.hide{
     opacity: 0;
+    z-index: -1;
   }
