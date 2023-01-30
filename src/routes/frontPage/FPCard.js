@@ -50,7 +50,7 @@ export default function FPCard(props){
         <div>
             
             {!flipped ? <div className={visible ? "fpFrontcard show" : "fpFrontcard hidden"} onClick={handleClick} ref={body}>
-                <img className="fpImgSmall" alt="Art" src={props.data.imgSrc ? "https://aiartbucket.s3.amazonaws.com/" + props.data.imgSrc : bingus}></img>
+                <img className="fpImgSmall" alt="Art" loading="lazy" src={props.data.imgSrc ? "https://aiartbucket.s3.amazonaws.com/" + props.data.imgSrc : bingus}></img>
                 <p className="title">{props.data.prompt}</p>
                 
             </div> :

@@ -82,8 +82,8 @@ export default function PromptBox(props) {
 
         <div className={advancedMode ? "advancedBox" : "advancedBox hide"}>
             {advancedMode ? <>
-                <div style={{ display: "flex" }}><h3>Steps</h3><input type="range" min="25" max="100" step="5" onChange={handleStepsChange}></input><div className='tokenBox'><p>{steps}</p></div></div>
-                <div style={{ display: "flex" }}><h3>Guidance Scale</h3><input type="range" defaultValue="7" min="3" max="15" step="1" onChange={handleScaleChange}></input><div className='tokenBox'><p>{scale}</p></div></div>
+                <div className="horizontalDiv"><h3>Steps</h3><input type="range" min="25" max="100" step="5" onChange={handleStepsChange}></input><div className='tokenBox'><p>{steps}</p></div></div>
+                <div className="horizontalDiv"><h3>Guidance Scale</h3><input type="range" defaultValue="7" min="3" max="15" step="1" onChange={handleScaleChange}></input><div className='tokenBox'><p>{scale}</p></div></div>
 
             </>
                 : null}
@@ -93,14 +93,17 @@ export default function PromptBox(props) {
         <div style={{ display: "flex" }}>
             <div style={{ display: "flex" }}>
                 <h3 style={{ margin: "auto" }}>Token cost: </h3>
-                <div className='tokenBox' onMouseEnter={()=>{setShowQuestion(true)}} onMouseLeave={()=>{setShowQuestion(false)}}>
+                <div className='tokenBox' onMouseEnter={() => { setShowQuestion(true) }} onMouseLeave={() => { setShowQuestion(false) }}>
                     <p>{tokenCost}</p>
-                    <div className="questionMark" onMouseEnter={()=>{setShowQuestion(true)}}><p className="questionMarkText">?</p></div>
+                    <div className="questionMark" onMouseEnter={() => { setShowQuestion(true) }}><p className="questionMarkText">?</p></div>
 
                 </div>
-                <div className={showQuestion ? "questionBox" : "questionBox hide"} onMouseLeave={()=>{setShowQuestion(false)}}><p className="questionMarkText">Just for show</p></div>
+            </div>
+                <div className={showQuestion ? "questionBox" : "questionBox hide"} onMouseLeave={() => { setShowQuestion(false) }}>
+                    <p className="questionMarkText">Just for show</p>
+                </div>
                 <button className='button' value='Generate' onClick={generateImage}>Generate</button>
-            </div></div>
+        </div>
 
     </div>)
 }

@@ -100,13 +100,6 @@
     max-width: 15vh;
 }
 
-@media screen and (max-width: 600px) {
-    .fpImgSmall{
-        max-width: 30vw;
-        border-radius: 1em;
-    }
-}
-
 .imgLarge{
     transition: 2s;
     flex: 1 1 0;
@@ -202,11 +195,21 @@
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 500px) {
     .fpFrontcard.show{
         padding: 0.8em;
     }
     .fpFrontcard.hidden{
         padding: 0.8em;
     }
+
+    .fp{
+        padding: 0;
+    }
+    .fpImgSmall{
+        max-width: 25vw;
+        border-radius: 1em;
+    }
 }
+
+
