@@ -48,7 +48,6 @@ select{
   color: var(--dark-background);
   border: 3px solid var(--accent-light);
   outline: 2px solid var(--accent-light);
-  
 }
 
 select option{
@@ -66,7 +65,7 @@ input[type=text]{
   display: block;
   padding: 24;
   height: 3em;
-  max-width: 80%;
+  width: 80%;
   text-align: center;
   margin: 2em;
   

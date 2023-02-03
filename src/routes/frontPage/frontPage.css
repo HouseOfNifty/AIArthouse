@@ -49,6 +49,8 @@
 .fpCarousel{
     overflow: scroll;
     scroll-behavior: smooth;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
     scroll-snap-type: x mandatory;
     display: flex;
     flex-direction: row;
@@ -61,6 +63,10 @@
     margin-left: auto;
     margin-right: auto;
     height: 100%;
+}
+
+.fpCarousel::-webkit-scrollbar {
+    display: none;
 }
 
 .fpCarouselItem{
