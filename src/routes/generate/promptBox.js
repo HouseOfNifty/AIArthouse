@@ -59,7 +59,18 @@ export default function PromptBox(props) {
 
     const updateGeneratorStatus = async () => {
         fetch("https://us-central1-aiarthouse.cloudfunctions.net/app/instances", {method: "GET"}).then((response) => response.text()).then((data) => {
-            setGeneratorStatus(data);
+            if(data == "TERMINATED") {
+                setGeneratorStatus("Offline");
+            }
+            else {
+                if(data == "RUNNING") {
+                    setGeneratorStatus("Online");
+                }
+                else {
+                    setGeneratorStatus("Starting...");
+                }
+            }
+
         });
     };
 
