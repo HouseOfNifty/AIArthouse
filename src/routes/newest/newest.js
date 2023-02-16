@@ -56,6 +56,7 @@ export default function Newest() {
                                 return <Card data={i} key={i.id}/>
 
                             }
+                            return null;
 
                         })}
                     </div>

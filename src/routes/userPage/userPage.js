@@ -1,7 +1,6 @@
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import React, { useRef, useState, useCallback } from "react";
 import './userPage.css';
-import { auth, db } from "../../firebase";
-import { useParams } from "react-router-dom";
+import { auth } from "../../firebase";
 import Card from "../card/card";
 import useUserSearch from "../../useUserSearch";
 
@@ -46,7 +45,7 @@ export default function UserPage() {
     return (<div className="bg">
         <div name="Info Header">
             <img src="" alt="Avatar" />
-            <h1></h1>
+            <div></div>
         </div>
         <div name="gallery">
 

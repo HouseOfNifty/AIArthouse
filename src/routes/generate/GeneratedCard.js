@@ -68,8 +68,6 @@ export default function GeneratedCard(props) {
                     : <div className="loaderBox"><div className="loader"></div></div>}
                     
                     <p>{imageDoc.prompt}</p>
-                    
-                    <p onClick={handleDelete}>Delete</p>
                     <img className="exitButton" alt="exit" src="https://cdn-icons-png.flaticon.com/512/2976/2976286.png" onClick={handleClick}/>
                     
                 </div>}

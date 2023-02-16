@@ -12,13 +12,14 @@
   --accent-light: rgb(255, 224, 175);
   --old-background: rgb(245, 245, 245);
 
-  --gradient-background: radial-gradient( rgb(134, 87, 16) 0%, rgba(255,255,255,1) 100%);
+  --gradient-background: linear-gradient( rgb(134, 87, 16) 0%, rgba(255,255,255,1) 50%, rgb(134, 87, 16) 100%);
+  --radial-gradient-background: radial-gradient( rgb(134, 87, 16) 0%, rgba(255,255,255,1) 100%);
   --gradient-background-blue: radial-gradient( var(--dark-background) 0%, rgba(255,255,255,1) 100%);
 }
 
 body{
   background: var(--gradient-background);
-  
+  height: 100vh;
 }
 
 input[type=range]{

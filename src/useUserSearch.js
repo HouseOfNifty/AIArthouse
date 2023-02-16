@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
-import TypeSense from 'typesense';
+
 
 export default function useUserSearch(_userId, _id, URL){
     
